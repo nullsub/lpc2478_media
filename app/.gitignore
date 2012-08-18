@@ -1,0 +1,10 @@
+.depend
+*.o
+*.swp
+*.hex
+*.elf
+*.bin
+*.sym
+*.lss
+*.lst
+build/*

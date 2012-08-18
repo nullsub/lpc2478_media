@@ -1,0 +1,27 @@
+portISR.o: portISR.c \
+ /home/chrisu/projects/lpc2478_Board/app/FreeRTOS/Source/include/FreeRTOS.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/include/stddef.h \
+ /home/chrisu/projects/lpc2478_Board/app/FreeRTOS/Source/include/projdefs.h \
+ /home/chrisu/projects/lpc2478_Board/app/FreeRTOSConfig.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/stdio.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/_ansi.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/newlib.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/sys/config.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/machine/ieeefp.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/sys/features.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/include/stdarg.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/sys/reent.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/_ansi.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/sys/_types.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/machine/_types.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/machine/_default_types.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/sys/lock.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/sys/types.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/machine/types.h \
+ /home/chrisu/arm-cs-tools/lib/gcc/arm-none-eabi/4.6.1/../../../../arm-none-eabi/include/sys/stdio.h \
+ /home/chrisu/projects/lpc2478_Board/app/lpc24xx.h \
+ /home/chrisu/projects/lpc2478_Board/app/FreeRTOS/Source/include/portable.h \
+ /home/chrisu/projects/lpc2478_Board/app/FreeRTOS/Source/include/../../Source/portable/GCC/ARM7_LPC2000/portmacro.h \
+ /home/chrisu/projects/lpc2478_Board/app/FreeRTOS/Source/include/mpu_wrappers.h \
+ /home/chrisu/projects/lpc2478_Board/app/FreeRTOS/Source/include/task.h \
+ /home/chrisu/projects/lpc2478_Board/app/FreeRTOS/Source/include/list.h

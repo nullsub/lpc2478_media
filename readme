@@ -1,0 +1,20 @@
+NXP LPC2478 Board:
+	http://gsg-elektronik.de/?id=64
+	- 72 MHZ
+	- 512 kb Flash / 64 kb RAM on die	
+	- 128 Mbit additional SDRAM
+	
+freertos template from:
+	http://www.freertos.org/Interactive_Frames/Open_Frames.html?http://interactive.freertos.org/entries/20906782-freertos-7-1-0-on-lpc2478-gcc-eclipse-linux 
+lpc21isp from:
+	http://sourceforge.net/projects/lpc21isp/ 
+
+MP3 decoder: 
+	helix:	https://datatype.helixcommunity.org/	
+	MAD:	http://www.underbit.com/products/mad/	
+
+info:
+	http://www.mikrocontroller.net/articles/ARM-MP3-Player
+
+
+Planned is a media player which plays musik from a local NAS. 
