@@ -54,8 +54,7 @@
 #define LEDS_REG_IOCLR  IOCLR1  // IOCLR register corresponding to LEDS_LED pin
 
 
-signed portBASE_TYPE ledsTaskStart (void);
-
+void led_task(void *);
 
 
 #endif

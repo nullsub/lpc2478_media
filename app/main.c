@@ -58,6 +58,8 @@
 
 
 #include "leds.h"
+#include "uart.h"
+#include "terminal.h"
 
 
 /* Demo application definitions. */
@@ -88,22 +90,52 @@
 
 /* Configure the hardware as required by the demo. */
 static void prvSetupHardware( void );
+static void startup_task(void *pvParameters);
+
 
 
 /*-----------------------------------------------------------*/
+int main( void ) {
 
-int main( void )
-{
 	prvSetupHardware(); // uncomment if run from internal flash
 
-	ledsTaskStart();
+	xTaskCreate(startup_task, (signed portCHAR *)"startup",
+			configMINIMAL_STACK_SIZE * 1, NULL, tskIDLE_PRIORITY + 1,
+			NULL);
 
-	/* Start the scheduler. */
+	/* Start the FreeRTOS scheduler */
 	vTaskStartScheduler();
+	while (1) ;
+}	
 
-    /* Will only get here if there was insufficient memory to create the idle
-    task. */
-	return 0;
+/*
+xQueueHandle uart_send_queue;
+xQueueHandle uart_receive_queue;
+*/
+
+void startup_task(void *params)
+{
+/*
+	uart_send_queue = xQueueCreate(UART_SEND_QUEUE_SIZE, sizeof(unsigned char));
+	assert_param(uart_send_queue);
+
+	uart_receive_queue =
+		xQueueCreate(UART_RECEIVE_QUEUE_SIZE, sizeof(unsigned char));
+	assert_param(uart_receive_queue);
+*/
+
+	//init_uart0(115200);
+
+//	xTaskCreate(serial_task, (signed portCHAR *)"serial", 
+//		configMINIMAL_STACK_SIZE*3, NULL, tskIDLE_PRIORITY + 2,
+//			NULL);
+
+	xTaskCreate(led_task, (signed portCHAR *)"led_blink",
+			configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1,
+			NULL);
+
+	vTaskDelete(NULL);
+	for (;;);
 }
 
 static void prvSetupHardware( void )
@@ -148,7 +180,7 @@ static void prvSetupHardware( void )
 	MAMTIM = mainMAM_TIM_3;
 	MAMCR = mainMAM_MODE_FULL;
 
-
 	/* Setup the led's on the MCB2300 board */
 	//vParTestInitialise();
 }
+

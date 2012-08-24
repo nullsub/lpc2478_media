@@ -8,8 +8,8 @@ export LDSCRIPT=ldscript-flash.ld
 export CRT0=boot.s
 export TARGET=SBC_lpc2478_v0.1
 export LINKER_FLAGS=$(COMMON)/common.a -Xlinker -obuild/${TARGET}.elf -Xlinker -M -Xlinker -Map=build/${TARGET}.map  
-export WARNINGS=-Wall -Wextra -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wsign-compare -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wunused
-export CFLAGS=$(WARNINGS) -mlong-calls -D GCC_ARM7 $(INCLUDES) $(BASEINCLUDE) -mcpu=arm7tdmi -T$(LDSCRIPT) -O0 -g -fomit-frame-pointer -fno-common
+export WARNINGS=-Wall -Wextra -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wsign-compare -Waggregate-return -Wstrict-prototypes -Wmissing-declarations
+export CFLAGS=$(WARNINGS) -mlong-calls -D GCC_ARM7 $(INCLUDES) $(BASEINCLUDE) -mcpu=arm7tdmi -T$(LDSCRIPT) -O0 -g -fomit-frame-pointer -fno-common -std=gnu99
 export ROOT=$(shell pwd)
 export BASEINCLUDE=-I$(ROOT) -I$(ROOT)/FreeRTOS/Source/include
 export COMMON=$(ROOT)/build/common
@@ -18,8 +18,12 @@ export STARTEDATTOP=true
 
 SUBDIRS=FreeRTOS/Source
 
-SRC_FILES = main.c syscalls.c leds.c
-
+SRC_FILES += main.c
+SRC_FILES += syscalls.c
+SRC_FILES += leds.c
+SRC_FILES += uart.c
+SRC_FILES += terminal.c
+SRC_FILES += tprintf.c
 
 ARM_OBJ = $(SRC_FILES:.c=.o)
 
